@@ -1,0 +1,353 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Movie.Admin.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Movie.Admin.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\css\\slimselect.css",
+      "PackagePath": "staticwebassets\\css\\slimselect.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\icon\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\icon\\favicon-32x32.png"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\angle-down.svg",
+      "PackagePath": "staticwebassets\\img\\angle-down.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\award.svg",
+      "PackagePath": "staticwebassets\\img\\award.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\check.svg",
+      "PackagePath": "staticwebassets\\img\\check.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\clapper-board.svg",
+      "PackagePath": "staticwebassets\\img\\clapper-board.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\comments.svg",
+      "PackagePath": "staticwebassets\\img\\comments.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\film.svg",
+      "PackagePath": "staticwebassets\\img\\film.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\graph-bar.svg",
+      "PackagePath": "staticwebassets\\img\\graph-bar.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\images.svg",
+      "PackagePath": "staticwebassets\\img\\images.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\logo.svg",
+      "PackagePath": "staticwebassets\\img\\logo.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\section\\section.jpg",
+      "PackagePath": "staticwebassets\\img\\section\\section.jpg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\star-half-alt.svg",
+      "PackagePath": "staticwebassets\\img\\star-half-alt.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\star.svg",
+      "PackagePath": "staticwebassets\\img\\star.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\user-circle.svg",
+      "PackagePath": "staticwebassets\\img\\user-circle.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\img\\user.svg",
+      "PackagePath": "staticwebassets\\img\\user.svg"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\js\\admin.js",
+      "PackagePath": "staticwebassets\\js\\admin.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\js\\slimselect.min.js",
+      "PackagePath": "staticwebassets\\js\\slimselect.min.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\js\\smooth-scrollbar.js",
+      "PackagePath": "staticwebassets\\js\\smooth-scrollbar.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\WorkSpace\\Web\\MovieProject\\Movie.Admin\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Movie.Admin.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Movie.Admin.props",
+      "PackagePath": "build\\Movie.Admin.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Movie.Admin.props",
+      "PackagePath": "buildMultiTargeting\\Movie.Admin.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Movie.Admin.props",
+      "PackagePath": "buildTransitive\\Movie.Admin.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

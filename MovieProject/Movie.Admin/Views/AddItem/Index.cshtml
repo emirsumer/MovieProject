@@ -1,0 +1,275 @@
+﻿@model Movie.Admin.Models.RequestCreate
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- main content -->
+<main class="main">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- main title -->
+            <div class="col-12">
+                <div class="main__title">
+                    <h2>Add new item</h2>
+                </div>
+            </div>
+            <!-- end main title -->
+            <!-- form -->
+            <div class="col-12">
+
+
+                <form action="#" class="sign__form sign__form--add">
+                    <div class="row">
+                        <div class="col-12 col-xl-7">
+                            <div class="row">
+
+
+
+                                <div class="col-12">
+                                    <div class="sign__group">
+                                        <input type="text" class="sign__input" placeholder="Title "> 
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="sign__group">
+                                        <textarea id="text" name="text" class="sign__textarea" placeholder="Description"> </textarea>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 col-xl-6">
+                                    <div class="sign__group">
+                                        <div class="sign__gallery">
+                                            <label id="gallery1" for="sign__gallery-upload">Upload cover (240x340)</label>
+                                            <input data-name="#gallery1" id="sign__gallery-upload" name="gallery" class="sign__gallery-upload" type="file" accept=".png, .jpg, .jpeg" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-xl-6">
+                                    <div class="sign__group">
+                                        <input type="text" class="sign__input" placeholder="Link to the background (1920x1280)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-xl-5">
+                            <div class="row">
+                                <div class="col-12 col-xl-6">
+                                    <div class="sign__group">
+                                        <select class="sign__selectjs" id="sign__quality">
+                                            <option value="FullHD">FullHD</option>
+                                            <option value="HD">HD</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-xl-6">
+                                    <div class="sign__group">
+                                        <input type="text" class="sign__input" placeholder="Age">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="sign__group">
+                                        <select class="sign__selectjs" id="sign__genre" multiple>
+                                            <option value="Action">Action</option>
+                                            <option value="Animation">Animation</option>
+                                            <option value="Comedy">Comedy</option>
+                                            <option value="Crime">Crime</option>
+                                            <option value="Drama">Drama</option>
+                                            <option value="Fantasy">Fantasy</option>
+                                            <option value="Historical">Historical</option>
+                                            <option value="Horror">Horror</option>
+                                            <option value="Romance">Romance</option>
+                                            <option value="Science-fiction">Science-fiction</option>
+                                            <option value="Thriller">Thriller</option>
+                                            <option value="Western">Western</option>
+                                            <option value="Otheer">Otheer</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-xl-6">
+                                    <div class="sign__group">
+                                        <input type="text" class="sign__input" placeholder="Running time">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-xl-6">
+                                    <div class="sign__group">
+                                        <input type="text" class="sign__input" placeholder="Premiere date">
+                                    </div>
+                                </div>
+
+                               
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-xl-4">
+                            <div class="sign__group">
+                                <select class="sign__selectjs" id="sign__director" multiple>
+                                    <option value="Matt Jones">Matt Jones</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-xl-8">
+                            <div class="sign__group">
+                                <select class="sign__selectjs" id="sign__actors" multiple>
+                                    <option value="Matt Jones">Matt Jones</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="sign__group">
+                                <label class="sign__label">Item type:</label>
+                                <ul class="sign__radio">
+                                    <li>
+                                        <input id="type1" type="radio" name="type" data-bs-toggle="collapse" data-bs-target=".multi-collapse" checked="">
+                                        <label for="type1">Movie</label>
+                                    </li>
+                                    <li>
+                                        <input id="type2" type="radio" name="type" data-bs-toggle="collapse" data-bs-target=".multi-collapse">
+                                        <label for="type2">TV Series</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- movie -->
+                        <div class="col-12">
+                            <div class="collapse show multi-collapse">
+                                <div class="sign__video">
+                                    <label id="movie1" for="sign__video-upload">Upload video</label>
+                                    <input data-name="#movie1" id="sign__video-upload" name="movie" class="sign__video-upload" type="file" accept="video/mp4,video/x-m4v,video/*">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end movie -->
+                        <!-- tv series -->
+                        <div class="col-12">
+                            <div class="collapse multi-collapse">
+                                <!-- season -->
+                                <div class="sign__season">
+                                    <div class="sign__season-head">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <span class="sign__episode-title">Season #1</span>
+                                            </div>
+
+                                            <div class="col-12 col-sm-6 col-md-5 col-xl-6">
+                                                <div class="sign__group">
+                                                    <input type="text" class="sign__input" placeholder="Season title">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-6 col-md-4 col-xl-4">
+                                                <div class="sign__group">
+                                                    <input type="text" class="sign__input" placeholder="Season info">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-4 col-md-3 col-xl-2">
+                                                <button class="sign__btn sign__btn--add"><span>add season</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- episode -->
+                                    <div class="sign__episode">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <span class="sign__episode-title">Episode #1</span>
+                                                <button class="sign__delete" type="button">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z" /></svg>
+                                                </button>
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <div class="sign__group">
+                                                    <input type="text" class="sign__input" placeholder="Episode title 1">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <div class="sign__group">
+                                                    <input type="text" class="sign__input" placeholder="Air date">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="sign__video">
+                                                    <label id="s1s1" for="sign__video-upload1">Upload episode 1</label>
+                                                    <input data-name="#s1s1" id="sign__video-upload1" name="s1s1" class="sign__video-upload" type="file" accept="video/mp4,video/x-m4v,video/*">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end episode -->
+                                    <!-- episode -->
+                                    <div class="sign__episode">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <span class="sign__episode-title">Episode #2</span>
+                                                <button class="sign__delete" type="button">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z" /></svg>
+                                                </button>
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <div class="sign__group">
+                                                    <input type="text" class="sign__input" placeholder="Episode title 2">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-md-6">
+                                                <div class="sign__group">
+                                                    <input type="text" class="sign__input" placeholder="Air date">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-8 col-md-9 col-xl-10">
+                                                <div class="sign__video">
+                                                    <label id="s1s2" for="sign__video-upload2">Upload episode 2</label>
+                                                    <input data-name="#s1s2" id="sign__video-upload2" name="s1s2" class="sign__video-upload" type="file" accept="video/mp4,video/x-m4v,video/*">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-4 col-md-3 col-xl-2">
+                                                <button class="sign__btn sign__btn--add"><span>add episode</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end episode -->
+                                </div>
+                                <!-- end season -->
+                            </div>
+                        </div>
+                        <!-- end tv series -->
+
+                        <div class="col-12">
+                            <button type="button" class="sign__btn sign__btn--small"><span>Publish</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- end form -->
+        </div>
+    </div>
+</main>
+<!-- end main content -->
+<!-- JS -->
+<script src="~/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/smooth-scrollbar.js"></script>
+<script src="~/js/slimselect.min.js"></script>
+<script src="~/js/admin.js"></script>
+
+
+</html>

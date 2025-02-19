@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="App.Config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="wwwroot\img\angle-down.svg" />
+    <None Include="wwwroot\img\arrow-left.svg" />
+    <None Include="wwwroot\img\arrow-right.svg" />
+    <None Include="wwwroot\img\check.svg" />
+    <None Include="wwwroot\img\comments.svg" />
+    <None Include="wwwroot\img\compress-arrows.svg" />
+    <None Include="wwwroot\img\credit-card.svg" />
+    <None Include="wwwroot\img\expand-arrows.svg" />
+    <None Include="wwwroot\img\film.svg" />
+    <None Include="wwwroot\img\multiply.svg" />
+    <None Include="wwwroot\img\play.svg" />
+    <None Include="wwwroot\img\star-half-alt.svg" />
+    <None Include="wwwroot\img\star.svg" />
+    <None Include="wwwroot\img\user.svg" />
+    <None Include="wwwroot\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\photoswipe-ui-default.min.js" />
+    <None Include="wwwroot\js\photoswipe.min.js" />
+    <None Include="wwwroot\js\plyr.min.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\js\slimselect.min.js" />
+    <None Include="wwwroot\js\smooth-scrollbar.js" />
+    <None Include="wwwroot\js\splide.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.11" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\LayersBusiness\Layer.Business\Layer.Business.csproj" />
+    <ProjectReference Include="..\..\LayersData\DataLayer\DataLayer.csproj" />
+  </ItemGroup>
+
+</Project>

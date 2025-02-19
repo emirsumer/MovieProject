@@ -1,0 +1,477 @@
+﻿@model MovieProject.Models.TvSeriesDetail
+
+@{
+	ViewData["Title"] = "View";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<::after></::after>
+<section class="section section--details">
+	<!-- details background -->
+	<div class="section__details-bg" data-bg="~/img/bg/details__bg.jpg" style="background: url(&quot;~/img/bg/details__bg.jpg&quot;) center center / cover no-repeat;"></div>
+	<!-- end details background -->
+	<!-- details content -->
+	
+		<div class="container">
+			<div class="row">
+				<!-- title -->
+				<div class="col-12">
+			<h1 class="section__title section__title--head">@Model.TvSeries.TvSeriesName</h1>
+				</div>
+				<!-- end title -->
+				<!-- content -->
+				<div class="col-12 col-xl-6">
+					<div class="item item--details">
+						<!-- card cover -->
+						<div class="item__cover">
+							<img src="@Model.BannerUrl" alt="">
+						</div>
+						<!-- end card cover -->
+						<!-- card content -->
+						<div class="item__content">
+							<div class="item__wrap">
+								<span class="item__rate">8.4</span>
+
+								<ul class="item__list">
+									<li>Full HD</li>
+									<li>16+</li>
+								</ul>
+							</div>
+
+							<ul class="item__meta">
+								<li><span>Genre:</span></a> <a href="#">@Model.TvSeries.TblCategory.CategoryName</a></li>
+								<li><span>Running time:</span>@Model.TvSeries.Duration</li>
+								<li><span>Country:</span> <a href="#">USA</a></li>
+						        <li><span>Premiere:</span>@Model.TvSeries.ReleaseDate</li>
+							</ul>
+
+							<ul class="item__meta item__meta--second">
+						    @foreach (var item in Model.TvSeries.TblDirector)
+					        {
+							<li><span>Director:</span> <a href="~/Pages/Actor">@item.DirectorName @item.DirectorSurname</a></li>
+						    }
+								<li>
+									<span>Actors:</span>
+									@{
+										foreach (var Actor in Model.TvSeries.TblActor)
+										{
+											<a href="~/Pages/Actor">@Actor.ActorName @Actor.ActorSurname</a>
+
+										}
+									}
+							</ul>
+						</div>
+
+						<div class="item__description item__description--details item__description--tvseries" data-scrollbar="true" tabindex="-1" style="overflow: hidden; outline: none;">
+							<div class="scroll-content">
+								<p>@Model.TvSeries.TvSeriesDetails</p>
+							</div>
+							<div class="scrollbar-track scrollbar-track-x show" style="display: none;">
+								<div class="scrollbar-thumb scrollbar-thumb-x" style="width: 638px; transform: translate3d(0px, 0px, 0px);">
+								</div>
+							</div><div class="scrollbar-track scrollbar-track-y show" style="display: block;">
+								<div class="scrollbar-thumb scrollbar-thumb-y" style="height: 106.458px; transform: translate3d(0px, 0px, 0px);">
+								</div>
+							</div>
+						</div>
+						<!-- end card content -->
+					</div>
+				</div>
+				<!-- end content -->
+				<!-- player -->
+			@* 	<div class="col-12 col-xl-6">
+					<div class="plyr plyr--full-ui plyr--video plyr--html5 plyr--fullscreen-enabled plyr--paused plyr--stopped plyr--pip-supported plyr--captions-enabled plyr__poster-enabled">
+						<div class="plyr__controls"><button class="plyr__controls__item plyr__control" type="button" data-plyr="play" aria-pressed="false" aria-label="Play"><svg class="icon--pressed" aria-hidden="true" focusable="false"><use xlink:href="#plyr-pause"></use></svg><svg class="icon--not-pressed" aria-hidden="true" focusable="false"><use xlink:href="#plyr-play"></use></svg><span class="label--pressed plyr__sr-only">Pause</span><span class="label--not-pressed plyr__sr-only">Play</span></button><div class="plyr__controls__item plyr__progress__container"><div class="plyr__progress"><input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" autocomplete="off" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="183.125333" aria-valuenow="0" id="plyr-seek-4824" aria-valuetext="00:00 of 00:00" style="--value: 0%;"><progress class="plyr__progress__buffer" min="0" max="100" value="0" role="progressbar" aria-hidden="true">% buffered</progress><span class="plyr__tooltip">00:00</span></div></div><div class="plyr__controls__item plyr__time--current plyr__time" aria-label="Current time" role="timer">03:03</div><div class="plyr__controls__item plyr__volume"><button type="button" class="plyr__control plyr__control--pressed" data-plyr="mute" aria-pressed="true"><svg class="icon--pressed" aria-hidden="true" focusable="false"><use xlink:href="#plyr-muted"></use></svg><svg class="icon--not-pressed" aria-hidden="true" focusable="false"><use xlink:href="#plyr-volume"></use></svg><span class="label--pressed plyr__sr-only">Unmute</span><span class="label--not-pressed plyr__sr-only">Mute</span></button><input data-plyr="volume" type="range" min="0" max="1" step="0.05" value="1" autocomplete="off" role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="plyr-volume-4824" aria-valuetext="0.0%" style="--value: 0%;"></div><button class="plyr__controls__item plyr__control" type="button" data-plyr="captions" aria-pressed="false"><svg class="icon--pressed" aria-hidden="true" focusable="false"><use xlink:href="#plyr-captions-on"></use></svg><svg class="icon--not-pressed" aria-hidden="true" focusable="false"><use xlink:href="#plyr-captions-off"></use></svg><span class="label--pressed plyr__sr-only">Disable captions</span><span class="label--not-pressed plyr__sr-only">Enable captions</span></button><div class="plyr__controls__item plyr__menu"><button aria-haspopup="true" aria-controls="plyr-settings-4824" aria-expanded="false" type="button" class="plyr__control" data-plyr="settings" aria-pressed="false"><svg aria-hidden="true" focusable="false"><use xlink:href="#plyr-settings"></use></svg><span class="plyr__sr-only">Settings</span></button><div class="plyr__menu__container" id="plyr-settings-4824" hidden=""><div><div id="plyr-settings-4824-home"><div role="menu"><button data-plyr="settings" type="button" class="plyr__control plyr__control--forward" role="menuitem" aria-haspopup="true"><span>Captions<span class="plyr__menu__value">Disabled</span></span></button><button data-plyr="settings" type="button" class="plyr__control plyr__control--forward" role="menuitem" aria-haspopup="true"><span>Quality<span class="plyr__menu__value">576p</span></span></button><button data-plyr="settings" type="button" class="plyr__control plyr__control--forward" role="menuitem" aria-haspopup="true"><span>Speed<span class="plyr__menu__value">Normal</span></span></button></div></div><div id="plyr-settings-4824-captions" hidden=""><button type="button" class="plyr__control plyr__control--back"><span aria-hidden="true">Captions</span><span class="plyr__sr-only">Go back to previous menu</span></button><div role="menu"><button data-plyr="language" type="button" role="menuitemradio" class="plyr__control" aria-checked="true" value="-1"><span>Disabled</span></button><button data-plyr="language" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="0"><span>English<span class="plyr__menu__value"><span class="plyr__badge">EN</span></span></span></button><button data-plyr="language" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1"><span>Français<span class="plyr__menu__value"><span class="plyr__badge">FR</span></span></span></button></div></div><div id="plyr-settings-4824-quality" hidden=""><button type="button" class="plyr__control plyr__control--back"><span aria-hidden="true">Quality</span><span class="plyr__sr-only">Go back to previous menu</span></button><div role="menu"><button data-plyr="quality" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1080"><span>1080p<span class="plyr__menu__value"><span class="plyr__badge">HD</span></span></span></button><button data-plyr="quality" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="720"><span>720p<span class="plyr__menu__value"><span class="plyr__badge">HD</span></span></span></button><button data-plyr="quality" type="button" role="menuitemradio" class="plyr__control" aria-checked="true" value="576"><span>576p<span class="plyr__menu__value"><span class="plyr__badge">SD</span></span></span></button></div></div><div id="plyr-settings-4824-speed" hidden=""><button type="button" class="plyr__control plyr__control--back"><span aria-hidden="true">Speed</span><span class="plyr__sr-only">Go back to previous menu</span></button><div role="menu"><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="0.5"><span>0.5×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="0.75"><span>0.75×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="true" value="1"><span>Normal</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1.25"><span>1.25×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1.5"><span>1.5×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1.75"><span>1.75×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="2"><span>2×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="4"><span>4×</span></button></div></div></div></div></div><button class="plyr__controls__item plyr__control" type="button" data-plyr="pip" aria-pressed="false"><svg aria-hidden="true" focusable="false"><use xlink:href="#plyr-pip"></use></svg><span class="plyr__sr-only">PIP</span></button><button class="plyr__controls__item plyr__control" type="button" data-plyr="fullscreen" aria-pressed="false"><svg class="icon--pressed" aria-hidden="true" focusable="false"><use xlink:href="#plyr-exit-fullscreen"></use></svg><svg class="icon--not-pressed" aria-hidden="true" focusable="false"><use xlink:href="#plyr-enter-fullscreen"></use></svg><span class="label--pressed plyr__sr-only">Exit fullscreen</span><span class="label--not-pressed plyr__sr-only">Enter fullscreen</span></button></div><div class="plyr__video-wrapper">
+							<video crossorigin="" playsinline="" poster="../../cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player" data-poster="../../cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
+								<!-- Video files -->
+								<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
+								<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
+								<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
+
+								<!-- Caption files -->
+								<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default="">
+								<track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+							</video><div class="plyr__poster" style="background-image: url(&quot;../../cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg&quot;);"></div>
+						</div><div class="plyr__captions" dir="auto"></div><button type="button" class="plyr__control plyr__control--overlaid" data-plyr="play" aria-pressed="false" aria-label="Play"><svg aria-hidden="true" focusable="false"><use xlink:href="#plyr-play"></use></svg><span class="plyr__sr-only">Play</span></button>
+					</div>
+
+					<div class="section__item-filter">
+						<select class="section__item-select" name="season" id="filter__season" data-id="ss-zkr43n51" tabindex="-1" aria-hidden="true" style="display: none;">
+							<option value="0">Season 1</option>
+							<option value="1">Season 2</option>
+							<option value="2">Season 3</option>
+							<option value="3">Season 4</option>
+							<option value="4">Season 5</option>
+						</select><div data-id="ss-zkr43n51" id="ss-zkr43n51" tabindex="0" class="ss-main section__item-select" role="combobox" aria-haspopup="listbox" aria-controls="ss-zkr43n51" aria-expanded="false" aria-activedescendant="uqylgaq4"><div class="ss-values"><div class="ss-single">Season 1</div></div><div class="ss-deselect ss-hide"><svg viewBox="0 0 100 100"><path d="M10,10 L90,90 M10,90 L90,10"></path></svg></div><svg class="ss-arrow" viewBox="0 0 100 100"><path d="M10,30 L50,70 L90,30"></path></svg></div>
+
+						<select class="section__item-select" name="series" id="filter__series" data-id="ss-m2mxqhbj" tabindex="-1" aria-hidden="true" style="display: none;">
+							<option value="0">Series 1</option>
+							<option value="1">Series 2</option>
+							<option value="2">Series 3</option>
+							<option value="3">Series 4</option>
+							<option value="4">Series 5</option>
+							<option value="5">Series 6</option>
+							<option value="6">Series 7</option>
+							<option value="7">Series 8</option>
+							<option value="8">Series 9</option>
+							<option value="9">Series 10</option>
+							<option value="10">Series 11</option>
+							<option value="11">Series 12</option>
+						</select><div data-id="ss-m2mxqhbj" id="ss-m2mxqhbj" tabindex="0" class="ss-main section__item-select" role="combobox" aria-haspopup="listbox" aria-controls="ss-m2mxqhbj" aria-expanded="false" aria-activedescendant="yg3043rm"><div class="ss-values"><div class="ss-single">Series 1</div></div><div class="ss-deselect ss-hide"><svg viewBox="0 0 100 100"><path d="M10,10 L90,90 M10,90 L90,10"></path></svg></div><svg class="ss-arrow" viewBox="0 0 100 100"><path d="M10,30 L50,70 L90,30"></path></svg></div>
+
+						<select class="section__item-select" name="sync" id="filter__sync" data-id="ss-u32oh45q" tabindex="-1" aria-hidden="true" style="display: none;">
+							<option value="0">Eng.Original</option>
+							<option value="1">NewStudio</option>
+							<option value="2">LostFilm</option>
+							<option value="3">FlixGo</option>
+						</select><div data-id="ss-u32oh45q" id="ss-u32oh45q" tabindex="0" class="ss-main section__item-select" role="combobox" aria-haspopup="listbox" aria-controls="ss-u32oh45q" aria-expanded="false" aria-activedescendant="itj6mk6i"><div class="ss-values"><div class="ss-single">Eng.Original</div></div><div class="ss-deselect ss-hide"><svg viewBox="0 0 100 100"><path d="M10,10 L90,90 M10,90 L90,10"></path></svg></div><svg class="ss-arrow" viewBox="0 0 100 100"><path d="M10,30 L50,70 L90,30"></path></svg></div>
+					</div>
+				</div> *@
+
+		<div class="col-12 col-xl-6 my-5">
+@* 			<iframe width="420" height="345" src="@Model.VideoUrl" style="float: right;">
+			</iframe> *@
+			<iframe width="560" height="315" src="@Model.VideoUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+				<!-- end player -->
+			</div>
+		</div>
+</section>
+
+		<section class="content">
+			<div class="content__head">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<!-- content title -->
+							<h2 class="content__title">Discover</h2>
+							<!-- end content title -->
+							<!-- content tabs nav -->
+							<ul class="nav nav-tabs content__tabs" id="content__tabs" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button id="1-tab" class="active" data-bs-toggle="tab" data-bs-target="#tab-1" type="button" role="tab" aria-controls="tab-1" aria-selected="true">Comments</button>
+								</li>
+
+								<li class="nav-item" role="presentation">
+									<button id="2-tab" data-bs-toggle="tab" data-bs-target="#tab-2" type="button" role="tab" aria-controls="tab-2" aria-selected="false" tabindex="-1">Reviews</button>
+								</li>
+
+								<li class="nav-item" role="presentation">
+									<button id="3-tab" data-bs-toggle="tab" data-bs-target="#tab-3" type="button" role="tab" aria-controls="tab-3" aria-selected="false" tabindex="-1">Photos</button>
+								</li>
+							</ul>
+							<!-- end content tabs nav -->
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-8">
+						<!-- content tabs -->
+						<div class="tab-content">
+							<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab" tabindex="0">
+								<div class="row">
+									<!-- comments -->
+									<div class="col-12">
+										<div class="comments">
+											<ul class="comments__list">
+												@foreach (var tscomment in Model.SeriesComments)
+										        {
+											<li class="comments__item">
+												<div class="comments__autor">
+													<img class="comments__avatar" src="~/img/user.svg" alt="">
+													<span class="comments__name">@tscomment.KullaniciId</span>
+													<span class="comments__time">@tscomment.TvSeriesCommentDt.Value.ToString()</span>
+												</div>
+												<p class="comments__text">@tscomment.TvSeriesComment</p>
+												<div class="comments__actions">
+													<div class="comments__rate">
+														<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.3,10.08A3,3,0,0,0,19,9H14.44L15,7.57A4.13,4.13,0,0,0,11.11,2a1,1,0,0,0-.91.59L7.35,9H5a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17.73a3,3,0,0,0,2.95-2.46l1.27-7A3,3,0,0,0,21.3,10.08ZM7,20H5a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H7Zm13-7.82-1.27,7a1,1,0,0,1-1,.82H9V10.21l2.72-6.12A2.11,2.11,0,0,1,13.1,6.87L12.57,8.3A2,2,0,0,0,14.44,11H19a1,1,0,0,1,.77.36A1,1,0,0,1,20,12.18Z"></path></svg>12</button>
+
+														<button type="button">7<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,2H6.27A3,3,0,0,0,3.32,4.46l-1.27,7A3,3,0,0,0,5,15H9.56L9,16.43A4.13,4.13,0,0,0,12.89,22a1,1,0,0,0,.91-.59L16.65,15H19a3,3,0,0,0,3-3V5A3,3,0,0,0,19,2ZM15,13.79l-2.72,6.12a2.13,2.13,0,0,1-1.38-2.78l.53-1.43A2,2,0,0,0,9.56,13H5a1,1,0,0,1-.77-.36A1,1,0,0,1,4,11.82l1.27-7a1,1,0,0,1,1-.82H15ZM20,12a1,1,0,0,1-1,1H17V4h2a1,1,0,0,1,1,1Z"></path></svg></button>
+													</div>
+
+													<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.707,11.293l-8-8A.99991.99991,0,0,0,12,4V7.54492A11.01525,11.01525,0,0,0,2,18.5V20a1,1,0,0,0,1.78418.62061,11.45625,11.45625,0,0,1,7.88672-4.04932c.0498-.00635.1748-.01611.3291-.02588V20a.99991.99991,0,0,0,1.707.707l8-8A.99962.99962,0,0,0,21.707,11.293ZM14,17.58594V15.5a.99974.99974,0,0,0-1-1c-.25488,0-1.2959.04932-1.56152.085A14.00507,14.00507,0,0,0,4.05176,17.5332,9.01266,9.01266,0,0,1,13,9.5a.99974.99974,0,0,0,1-1V6.41406L19.58594,12Z"></path></svg>Reply</button>
+													<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,14a1,1,0,0,0-1.22.72A7,7,0,0,1,11,20H5.41l.64-.63a1,1,0,0,0,0-1.41A7,7,0,0,1,9.25,6.22a1,1,0,0,0-.5-1.94A9,9,0,0,0,4,18.62L2.29,20.29a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,22h8a9,9,0,0,0,8.72-6.75A1,1,0,0,0,19,14ZM21,2a1,1,0,0,0-1,1h0a5,5,0,1,0,.3,7.75A1,1,0,1,0,19,9.25,3,3,0,1,1,17,4a3,3,0,0,1,2.23,1H18a1,1,0,0,0,0,2h3a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2Z"></path></svg>Quote</button>
+												</div>
+											</li>
+										}
+												
+
+												@* <li class="comments__item comments__item--answer">
+													<div class="comments__autor">
+														<img class="comments__avatar" src="~/img/user.svg" alt="">
+														<span class="comments__name">Gene Graham</span>
+														<span class="comments__time">24.08.2023, 16:41</span>
+													</div>
+													<p class="comments__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+													<div class="comments__actions">
+														<div class="comments__rate">
+															<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.3,10.08A3,3,0,0,0,19,9H14.44L15,7.57A4.13,4.13,0,0,0,11.11,2a1,1,0,0,0-.91.59L7.35,9H5a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17.73a3,3,0,0,0,2.95-2.46l1.27-7A3,3,0,0,0,21.3,10.08ZM7,20H5a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H7Zm13-7.82-1.27,7a1,1,0,0,1-1,.82H9V10.21l2.72-6.12A2.11,2.11,0,0,1,13.1,6.87L12.57,8.3A2,2,0,0,0,14.44,11H19a1,1,0,0,1,.77.36A1,1,0,0,1,20,12.18Z"></path></svg>8</button>
+
+															<button type="button">3<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,2H6.27A3,3,0,0,0,3.32,4.46l-1.27,7A3,3,0,0,0,5,15H9.56L9,16.43A4.13,4.13,0,0,0,12.89,22a1,1,0,0,0,.91-.59L16.65,15H19a3,3,0,0,0,3-3V5A3,3,0,0,0,19,2ZM15,13.79l-2.72,6.12a2.13,2.13,0,0,1-1.38-2.78l.53-1.43A2,2,0,0,0,9.56,13H5a1,1,0,0,1-.77-.36A1,1,0,0,1,4,11.82l1.27-7a1,1,0,0,1,1-.82H15ZM20,12a1,1,0,0,1-1,1H17V4h2a1,1,0,0,1,1,1Z"></path></svg></button>
+														</div>
+
+														<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.707,11.293l-8-8A.99991.99991,0,0,0,12,4V7.54492A11.01525,11.01525,0,0,0,2,18.5V20a1,1,0,0,0,1.78418.62061,11.45625,11.45625,0,0,1,7.88672-4.04932c.0498-.00635.1748-.01611.3291-.02588V20a.99991.99991,0,0,0,1.707.707l8-8A.99962.99962,0,0,0,21.707,11.293ZM14,17.58594V15.5a.99974.99974,0,0,0-1-1c-.25488,0-1.2959.04932-1.56152.085A14.00507,14.00507,0,0,0,4.05176,17.5332,9.01266,9.01266,0,0,1,13,9.5a.99974.99974,0,0,0,1-1V6.41406L19.58594,12Z"></path></svg>Reply</button>
+														<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,14a1,1,0,0,0-1.22.72A7,7,0,0,1,11,20H5.41l.64-.63a1,1,0,0,0,0-1.41A7,7,0,0,1,9.25,6.22a1,1,0,0,0-.5-1.94A9,9,0,0,0,4,18.62L2.29,20.29a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,22h8a9,9,0,0,0,8.72-6.75A1,1,0,0,0,19,14ZM21,2a1,1,0,0,0-1,1h0a5,5,0,1,0,.3,7.75A1,1,0,1,0,19,9.25,3,3,0,1,1,17,4a3,3,0,0,1,2.23,1H18a1,1,0,0,0,0,2h3a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2Z"></path></svg>Quote</button>
+													</div>
+												</li>
+
+												<li class="comments__item comments__item--quote">
+													<div class="comments__autor">
+														<img class="comments__avatar" src="~/img/user.svg" alt="">
+														<span class="comments__name">Rosa Lee</span>
+														<span class="comments__time">11.08.2023, 11:11</span>
+													</div>
+													<p class="comments__text"><span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</span>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+													<div class="comments__actions">
+														<div class="comments__rate">
+															<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.3,10.08A3,3,0,0,0,19,9H14.44L15,7.57A4.13,4.13,0,0,0,11.11,2a1,1,0,0,0-.91.59L7.35,9H5a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17.73a3,3,0,0,0,2.95-2.46l1.27-7A3,3,0,0,0,21.3,10.08ZM7,20H5a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H7Zm13-7.82-1.27,7a1,1,0,0,1-1,.82H9V10.21l2.72-6.12A2.11,2.11,0,0,1,13.1,6.87L12.57,8.3A2,2,0,0,0,14.44,11H19a1,1,0,0,1,.77.36A1,1,0,0,1,20,12.18Z"></path></svg>11</button>
+
+															<button type="button">1<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,2H6.27A3,3,0,0,0,3.32,4.46l-1.27,7A3,3,0,0,0,5,15H9.56L9,16.43A4.13,4.13,0,0,0,12.89,22a1,1,0,0,0,.91-.59L16.65,15H19a3,3,0,0,0,3-3V5A3,3,0,0,0,19,2ZM15,13.79l-2.72,6.12a2.13,2.13,0,0,1-1.38-2.78l.53-1.43A2,2,0,0,0,9.56,13H5a1,1,0,0,1-.77-.36A1,1,0,0,1,4,11.82l1.27-7a1,1,0,0,1,1-.82H15ZM20,12a1,1,0,0,1-1,1H17V4h2a1,1,0,0,1,1,1Z"></path></svg></button>
+														</div>
+
+														<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.707,11.293l-8-8A.99991.99991,0,0,0,12,4V7.54492A11.01525,11.01525,0,0,0,2,18.5V20a1,1,0,0,0,1.78418.62061,11.45625,11.45625,0,0,1,7.88672-4.04932c.0498-.00635.1748-.01611.3291-.02588V20a.99991.99991,0,0,0,1.707.707l8-8A.99962.99962,0,0,0,21.707,11.293ZM14,17.58594V15.5a.99974.99974,0,0,0-1-1c-.25488,0-1.2959.04932-1.56152.085A14.00507,14.00507,0,0,0,4.05176,17.5332,9.01266,9.01266,0,0,1,13,9.5a.99974.99974,0,0,0,1-1V6.41406L19.58594,12Z"></path></svg>Reply</button>
+														<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,14a1,1,0,0,0-1.22.72A7,7,0,0,1,11,20H5.41l.64-.63a1,1,0,0,0,0-1.41A7,7,0,0,1,9.25,6.22a1,1,0,0,0-.5-1.94A9,9,0,0,0,4,18.62L2.29,20.29a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,22h8a9,9,0,0,0,8.72-6.75A1,1,0,0,0,19,14ZM21,2a1,1,0,0,0-1,1h0a5,5,0,1,0,.3,7.75A1,1,0,1,0,19,9.25,3,3,0,1,1,17,4a3,3,0,0,1,2.23,1H18a1,1,0,0,0,0,2h3a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2Z"></path></svg>Quote</button>
+													</div>
+												</li>
+
+												<li class="comments__item">
+													<div class="comments__autor">
+														<img class="comments__avatar" src="~/img/user.svg" alt="">
+														<span class="comments__name">Brian Cranston</span>
+														<span class="comments__time">07.08.2023, 14:33</span>
+													</div>
+													<p class="comments__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+													<div class="comments__actions">
+														<div class="comments__rate">
+															<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.3,10.08A3,3,0,0,0,19,9H14.44L15,7.57A4.13,4.13,0,0,0,11.11,2a1,1,0,0,0-.91.59L7.35,9H5a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17.73a3,3,0,0,0,2.95-2.46l1.27-7A3,3,0,0,0,21.3,10.08ZM7,20H5a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H7Zm13-7.82-1.27,7a1,1,0,0,1-1,.82H9V10.21l2.72-6.12A2.11,2.11,0,0,1,13.1,6.87L12.57,8.3A2,2,0,0,0,14.44,11H19a1,1,0,0,1,.77.36A1,1,0,0,1,20,12.18Z"></path></svg>99</button>
+
+															<button type="button">35<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,2H6.27A3,3,0,0,0,3.32,4.46l-1.27,7A3,3,0,0,0,5,15H9.56L9,16.43A4.13,4.13,0,0,0,12.89,22a1,1,0,0,0,.91-.59L16.65,15H19a3,3,0,0,0,3-3V5A3,3,0,0,0,19,2ZM15,13.79l-2.72,6.12a2.13,2.13,0,0,1-1.38-2.78l.53-1.43A2,2,0,0,0,9.56,13H5a1,1,0,0,1-.77-.36A1,1,0,0,1,4,11.82l1.27-7a1,1,0,0,1,1-.82H15ZM20,12a1,1,0,0,1-1,1H17V4h2a1,1,0,0,1,1,1Z"></path></svg></button>
+														</div>
+
+														<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.707,11.293l-8-8A.99991.99991,0,0,0,12,4V7.54492A11.01525,11.01525,0,0,0,2,18.5V20a1,1,0,0,0,1.78418.62061,11.45625,11.45625,0,0,1,7.88672-4.04932c.0498-.00635.1748-.01611.3291-.02588V20a.99991.99991,0,0,0,1.707.707l8-8A.99962.99962,0,0,0,21.707,11.293ZM14,17.58594V15.5a.99974.99974,0,0,0-1-1c-.25488,0-1.2959.04932-1.56152.085A14.00507,14.00507,0,0,0,4.05176,17.5332,9.01266,9.01266,0,0,1,13,9.5a.99974.99974,0,0,0,1-1V6.41406L19.58594,12Z"></path></svg>Reply</button>
+														<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,14a1,1,0,0,0-1.22.72A7,7,0,0,1,11,20H5.41l.64-.63a1,1,0,0,0,0-1.41A7,7,0,0,1,9.25,6.22a1,1,0,0,0-.5-1.94A9,9,0,0,0,4,18.62L2.29,20.29a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,22h8a9,9,0,0,0,8.72-6.75A1,1,0,0,0,19,14ZM21,2a1,1,0,0,0-1,1h0a5,5,0,1,0,.3,7.75A1,1,0,1,0,19,9.25,3,3,0,1,1,17,4a3,3,0,0,1,2.23,1H18a1,1,0,0,0,0,2h3a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2Z"></path></svg>Quote</button>
+													</div>
+												</li>
+
+												<li class="comments__item">
+													<div class="comments__autor">
+														<img class="comments__avatar" src="~/img/user.svg" alt="">
+														<span class="comments__name">Tess Harper</span>
+														<span class="comments__time">02.08.2023, 15:24</span>
+													</div>
+													<p class="comments__text">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+													<div class="comments__actions">
+														<div class="comments__rate">
+															<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.3,10.08A3,3,0,0,0,19,9H14.44L15,7.57A4.13,4.13,0,0,0,11.11,2a1,1,0,0,0-.91.59L7.35,9H5a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17.73a3,3,0,0,0,2.95-2.46l1.27-7A3,3,0,0,0,21.3,10.08ZM7,20H5a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H7Zm13-7.82-1.27,7a1,1,0,0,1-1,.82H9V10.21l2.72-6.12A2.11,2.11,0,0,1,13.1,6.87L12.57,8.3A2,2,0,0,0,14.44,11H19a1,1,0,0,1,.77.36A1,1,0,0,1,20,12.18Z"></path></svg>74</button>
+
+															<button type="button">13<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,2H6.27A3,3,0,0,0,3.32,4.46l-1.27,7A3,3,0,0,0,5,15H9.56L9,16.43A4.13,4.13,0,0,0,12.89,22a1,1,0,0,0,.91-.59L16.65,15H19a3,3,0,0,0,3-3V5A3,3,0,0,0,19,2ZM15,13.79l-2.72,6.12a2.13,2.13,0,0,1-1.38-2.78l.53-1.43A2,2,0,0,0,9.56,13H5a1,1,0,0,1-.77-.36A1,1,0,0,1,4,11.82l1.27-7a1,1,0,0,1,1-.82H15ZM20,12a1,1,0,0,1-1,1H17V4h2a1,1,0,0,1,1,1Z"></path></svg></button>
+														</div>
+
+														<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.707,11.293l-8-8A.99991.99991,0,0,0,12,4V7.54492A11.01525,11.01525,0,0,0,2,18.5V20a1,1,0,0,0,1.78418.62061,11.45625,11.45625,0,0,1,7.88672-4.04932c.0498-.00635.1748-.01611.3291-.02588V20a.99991.99991,0,0,0,1.707.707l8-8A.99962.99962,0,0,0,21.707,11.293ZM14,17.58594V15.5a.99974.99974,0,0,0-1-1c-.25488,0-1.2959.04932-1.56152.085A14.00507,14.00507,0,0,0,4.05176,17.5332,9.01266,9.01266,0,0,1,13,9.5a.99974.99974,0,0,0,1-1V6.41406L19.58594,12Z"></path></svg>Reply</button>
+														<button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,14a1,1,0,0,0-1.22.72A7,7,0,0,1,11,20H5.41l.64-.63a1,1,0,0,0,0-1.41A7,7,0,0,1,9.25,6.22a1,1,0,0,0-.5-1.94A9,9,0,0,0,4,18.62L2.29,20.29a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,22h8a9,9,0,0,0,8.72-6.75A1,1,0,0,0,19,14ZM21,2a1,1,0,0,0-1,1h0a5,5,0,1,0,.3,7.75A1,1,0,1,0,19,9.25,3,3,0,1,1,17,4a3,3,0,0,1,2.23,1H18a1,1,0,0,0,0,2h3a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2Z"></path></svg>Quote</button>
+													</div>
+												</li> *@
+											</ul>
+
+											<form action="#" class="sign__form sign__form--comments">
+												<div class="sign__group">
+													<textarea id="text" name="text" class="sign__textarea" placeholder="Write a comment"></textarea>
+												</div>
+												<button type="button" class="sign__btn sign__btn--small"><span>Send</span></button>
+											</form>
+										</div>
+									</div>
+									<!-- end comments -->
+								</div>
+							</div>
+
+							<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab" tabindex="0">
+								<div class="row">
+									<!-- reviews -->
+									<div class="col-12">
+										<div class="reviews">
+											<ul class="reviews__list">
+												<li class="reviews__item">
+													<div class="reviews__autor">
+														<img class="reviews__avatar" src="~/img/user.svg" alt="">
+														<span class="reviews__name">Best Marvel movie in my opinion</span>
+														<span class="reviews__time">24.08.2023, by Tess Harper</span>
+
+														<span class="reviews__rating"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22,10.1c0.1-0.5-0.3-1.1-0.8-1.1l-5.7-0.8L12.9,3c-0.1-0.2-0.2-0.3-0.4-0.4C12,2.3,11.4,2.5,11.1,3L8.6,8.2L2.9,9C2.6,9,2.4,9.1,2.3,9.3c-0.4,0.4-0.4,1,0,1.4l4.1,4l-1,5.7c0,0.2,0,0.4,0.1,0.6c0.3,0.5,0.9,0.7,1.4,0.4l5.1-2.7l5.1,2.7c0.1,0.1,0.3,0.1,0.5,0.1v0c0.1,0,0.1,0,0.2,0c0.5-0.1,0.9-0.6,0.8-1.2l-1-5.7l4.1-4C21.9,10.5,22,10.3,22,10.1z"></path></svg>8.0</span>
+													</div>
+													<p class="reviews__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+												</li>
+
+												<li class="reviews__item">
+													<div class="reviews__autor">
+														<img class="reviews__avatar" src="~/img/user.svg" alt="">
+														<span class="reviews__name">Greate movie</span>
+														<span class="reviews__time">24.08.2023, by Gene Graham</span>
+
+														<span class="reviews__rating"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22,10.1c0.1-0.5-0.3-1.1-0.8-1.1l-5.7-0.8L12.9,3c-0.1-0.2-0.2-0.3-0.4-0.4C12,2.3,11.4,2.5,11.1,3L8.6,8.2L2.9,9C2.6,9,2.4,9.1,2.3,9.3c-0.4,0.4-0.4,1,0,1.4l4.1,4l-1,5.7c0,0.2,0,0.4,0.1,0.6c0.3,0.5,0.9,0.7,1.4,0.4l5.1-2.7l5.1,2.7c0.1,0.1,0.3,0.1,0.5,0.1v0c0.1,0,0.1,0,0.2,0c0.5-0.1,0.9-0.6,0.8-1.2l-1-5.7l4.1-4C21.9,10.5,22,10.3,22,10.1z"></path></svg>9.0</span>
+													</div>
+													<p class="reviews__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+												</li>
+
+												<li class="reviews__item">
+													<div class="reviews__autor">
+														<img class="reviews__avatar" src="~/img/user.svg" alt="">
+														<span class="reviews__name">It could be better</span>
+														<span class="reviews__time">24.08.2023, by Rosa Lee</span>
+
+														<span class="reviews__rating"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M22,10.1c0.1-0.5-0.3-1.1-0.8-1.1l-5.7-0.8L12.9,3c-0.1-0.2-0.2-0.3-0.4-0.4C12,2.3,11.4,2.5,11.1,3L8.6,8.2L2.9,9C2.6,9,2.4,9.1,2.3,9.3c-0.4,0.4-0.4,1,0,1.4l4.1,4l-1,5.7c0,0.2,0,0.4,0.1,0.6c0.3,0.5,0.9,0.7,1.4,0.4l5.1-2.7l5.1,2.7c0.1,0.1,0.3,0.1,0.5,0.1v0c0.1,0,0.1,0,0.2,0c0.5-0.1,0.9-0.6,0.8-1.2l-1-5.7l4.1-4C21.9,10.5,22,10.3,22,10.1z"></path></svg>7.0</span>
+													</div>
+													<p class="reviews__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+												</li>
+											</ul>
+
+											<form action="#" class="sign__form sign__form--comments">
+												<div class="row">
+													<div class="col-12 col-md-6">
+														<div class="sign__group">
+															<input type="text" class="sign__input" placeholder="Title">
+														</div>
+													</div>
+
+													<div class="col-12 col-md-6">
+														<div class="sign__group">
+															<select class="sign__select" name="rating" id="rating">
+																<option value="0">Rating</option>
+																<option value="1">1 star</option>
+																<option value="2">2 stars</option>
+																<option value="3">3 stars</option>
+																<option value="4">4 stars</option>
+																<option value="5">5 stars</option>
+																<option value="6">6 stars</option>
+																<option value="7">7 stars</option>
+																<option value="8">8 stars</option>
+																<option value="9">9 stars</option>
+																<option value="10">10 stars</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-12">
+														<div class="sign__group">
+															<textarea class="sign__textarea" placeholder="Write a review"></textarea>
+														</div>
+													</div>
+
+													<div class="col-12">
+														<button type="button" class="sign__btn sign__btn--small"><span>Send</span></button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+									<!-- end reviews -->
+								</div>
+							</div>
+
+							<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab" tabindex="0">
+								<!-- project gallery -->
+								<div class="gallery" itemscope="" data-pswp-uid="1">
+									<div class="row row--grid">
+										<!-- gallery item -->
+										<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope="">
+											<a href="~/img/gallery/project-1.jpg" itemprop="contentUrl" data-size="1920x1280">
+												<img src="~/img/gallery/project-1.jpg" itemprop="thumbnail" alt="Image description">
+											</a>
+											<figcaption itemprop="caption description">Some image caption 1</figcaption>
+										</figure>
+										<!-- end gallery item -->
+										<!-- gallery item -->
+										<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope="">
+											<a href="~/img/gallery/project-2.jpg" itemprop="contentUrl" data-size="1920x1280">
+												<img src="~/img/gallery/project-2.jpg" itemprop="thumbnail" alt="Image description">
+											</a>
+											<figcaption itemprop="caption description">Some image caption 2</figcaption>
+										</figure>
+										<!-- end gallery item -->
+										<!-- gallery item -->
+										<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope="">
+											<a href="~/img/gallery/project-3.jpg" itemprop="contentUrl" data-size="1920x1280">
+												<img src="~/img/gallery/project-3.jpg" itemprop="thumbnail" alt="Image description">
+											</a>
+											<figcaption itemprop="caption description">Some image caption 3</figcaption>
+										</figure>
+										<!-- end gallery item -->
+										<!-- gallery item -->
+										<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope="">
+											<a href="~/img/gallery/project-4.jpg" itemprop="contentUrl" data-size="1920x1280">
+												<img src="~/img/gallery/project-4.jpg" itemprop="thumbnail" alt="Image description">
+											</a>
+											<figcaption itemprop="caption description">Some image caption 4</figcaption>
+										</figure>
+										<!-- end gallery item -->
+										<!-- gallery item -->
+										<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope="">
+											<a href="~/img/gallery/project-5.jpg" itemprop="contentUrl" data-size="1920x1280">
+												<img src="~/img/gallery/project-5.jpg" itemprop="thumbnail" alt="Image description">
+											</a>
+											<figcaption itemprop="caption description">Some image caption 5</figcaption>
+										</figure>
+										<!-- end gallery item -->
+										<!-- gallery item -->
+										<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope="">
+											<a href="~/img/project-6.jpg" itemprop="contentUrl" data-size="1920x1280">
+												<img src="~/img/gallery/project-6.jpg" itemprop="thumbnail" alt="Image description">
+											</a>
+											<figcaption itemprop="caption description">Some image caption 6</figcaption>
+										</figure>
+										<!-- end gallery item -->
+									</div>
+								</div>
+								<!-- end project gallery -->
+							</div>
+						</div>
+						<!-- end content tabs -->
+					</div>
+
+					<!-- sidebar -->
+					<div class="col-12 col-lg-4">
+						<div class="row">
+							<!-- section title -->
+							<div class="col-12">
+								<h2 class="section__title section__title--sidebar">You may also like</h2>
+							</div>
+							<!-- end section title -->
+					        @foreach (var tvseries in Model.AllTvSeries)
+							{
+								<div class="col-6 col-sm-4 col-lg-6">
+									<div class="item">
+								<a href="~/Category/MovieDetails/@tvseries.TvSeries.TblTvSeriesPhoto" class="item__cover">
+									@foreach (var photo in tvseries.TvSeries.TblTvSeriesPhoto)
+											{
+												<img src="@(photo.TvSeriesPhotoUrl)" alt="">
+												<span class="item__play">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"></path></svg>
+												</span>
+											}
+
+								</a>
+										<div class="item__content">
+									<h3 class="item__title"><a href="~/Category/MovieDetails/@tvseries.TvSeries.TvSeriesId">@tvseries.TvSeries.TvSeriesName</a></h3>
+											<span class="item__category">
+										<a href="#">@tvseries.TvSeries.TblCategory.CategoryName</a>
+											</span>
+											<span class="item__rate">8.4</span>
+										</div>
+									</div>
+								</div>
+							}  
+						</div>
+					</div>
+					<!-- end sidebar -->
+				</div>
+			</div>
+		</section>
+	
+	else
+	{
+		RenderSection("~/Views/Error/Index.cshtml");
+	}

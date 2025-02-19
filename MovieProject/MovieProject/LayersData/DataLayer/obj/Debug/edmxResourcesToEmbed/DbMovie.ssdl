@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbMovieModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TblActor">
+    <Key>
+      <PropertyRef Name="ActorId" />
+    </Key>
+    <Property Name="ActorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActorSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActorDt" Type="date" />
+    <Property Name="ActorDetails" Type="nvarchar(max)" />
+    <Property Name="MovieId" Type="int" />
+    <Property Name="TvSeriesId" Type="int" />
+    <Property Name="ActorPhotoId" Type="int" />
+    <Property Name="ActorPhotoUrl" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblCategory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblDirector">
+    <Key>
+      <PropertyRef Name="DirectorId" />
+    </Key>
+    <Property Name="DirectorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DirectorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DirectorSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="MovieId" Type="int" />
+    <Property Name="TvSeriesId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblKisi">
+    <Key>
+      <PropertyRef Name="KisiId" />
+    </Key>
+    <Property Name="KisiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="MailAdresi" Type="nvarchar" MaxLength="50" />
+    <Property Name="KisiGuid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TblKisiGezinti">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KisiId" Type="int" />
+    <Property Name="KullaniciId" Type="int" />
+    <Property Name="MovieId" Type="int" />
+    <Property Name="TvSeriesId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblKullanici">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KisiId" Type="int" Nullable="false" />
+    <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="SonGiris" Type="datetime" />
+    <Property Name="KayitTarihi" Type="datetime" />
+    <Property Name="Aktif" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblMovie">
+    <Key>
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="MovieId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovieName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MovieDetails" Type="nvarchar(max)" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="ReleaseDate" Type="int" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="Goruntulenme" Type="int" />
+    <Property Name="MovieSeo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblMovieComment">
+    <Key>
+      <PropertyRef Name="MovieCommentId" />
+    </Key>
+    <Property Name="MovieCommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovieId" Type="int" Nullable="false" />
+    <Property Name="MovieComment" Type="nvarchar(max)" />
+    <Property Name="MovieCommentDt" Type="datetime" />
+    <Property Name="KisiId" Type="int" />
+    <Property Name="KullaniciId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblMoviePhoto">
+    <Key>
+      <PropertyRef Name="MoviePhotoId" />
+    </Key>
+    <Property Name="MoviePhotoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovieId" Type="int" Nullable="false" />
+    <Property Name="MoviePhotoUrl" Type="nvarchar(max)" />
+    <Property Name="MovieAcilis" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblMovieVideo">
+    <Key>
+      <PropertyRef Name="MovieVideoId" />
+    </Key>
+    <Property Name="MovieVideoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovieVideoUrl" Type="nvarchar(max)" />
+    <Property Name="MovieId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblTvSeries">
+    <Key>
+      <PropertyRef Name="TvSeriesId" />
+    </Key>
+    <Property Name="TvSeriesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TvSeriesName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TvSeriesDetails" Type="nvarchar(max)" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="ReleaseDate" Type="int" />
+    <Property Name="Season" Type="int" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="Goruntulenme" Type="int" />
+    <Property Name="TvSeriesSeo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblTvSeriesComment">
+    <Key>
+      <PropertyRef Name="TvSeriesCommentId" />
+    </Key>
+    <Property Name="TvSeriesCommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TvSeriesId" Type="int" Nullable="false" />
+    <Property Name="TvSeriesComment" Type="nvarchar(max)" />
+    <Property Name="TvSeriesCommentDt" Type="datetime" />
+    <Property Name="KisiId" Type="int" />
+    <Property Name="KullaniciId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblTvSeriesPhoto">
+    <Key>
+      <PropertyRef Name="TvSeriesPhotoId" />
+    </Key>
+    <Property Name="TvSeriesPhotoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TvSeriesId" Type="int" Nullable="false" />
+    <Property Name="TvSeriesPhotoUrl" Type="nvarchar(max)" />
+    <Property Name="TvSeriesAcilis" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblTvSeriesVideo">
+    <Key>
+      <PropertyRef Name="TvSeriesVideoId" />
+    </Key>
+    <Property Name="TvSeriesVideoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TvSeriesVideoUrl" Type="nvarchar(max)" />
+    <Property Name="TvSeriesId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TblActor_TblMovie">
+    <End Role="TblMovie" Type="Self.TblMovie" Multiplicity="0..1" />
+    <End Role="TblActor" Type="Self.TblActor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMovie">
+        <PropertyRef Name="MovieId" />
+      </Principal>
+      <Dependent Role="TblActor">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblActor_TblTvSeries">
+    <End Role="TblTvSeries" Type="Self.TblTvSeries" Multiplicity="0..1" />
+    <End Role="TblActor" Type="Self.TblActor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblTvSeries">
+        <PropertyRef Name="TvSeriesId" />
+      </Principal>
+      <Dependent Role="TblActor">
+        <PropertyRef Name="TvSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblDirector_TblMovie">
+    <End Role="TblMovie" Type="Self.TblMovie" Multiplicity="0..1" />
+    <End Role="TblDirector" Type="Self.TblDirector" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMovie">
+        <PropertyRef Name="MovieId" />
+      </Principal>
+      <Dependent Role="TblDirector">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblDirector_TblTvSeries">
+    <End Role="TblTvSeries" Type="Self.TblTvSeries" Multiplicity="0..1" />
+    <End Role="TblDirector" Type="Self.TblDirector" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblTvSeries">
+        <PropertyRef Name="TvSeriesId" />
+      </Principal>
+      <Dependent Role="TblDirector">
+        <PropertyRef Name="TvSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblKisiGezinti_TblKisi">
+    <End Role="TblKisi" Type="Self.TblKisi" Multiplicity="0..1" />
+    <End Role="TblKisiGezinti" Type="Self.TblKisiGezinti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblKisi">
+        <PropertyRef Name="KisiId" />
+      </Principal>
+      <Dependent Role="TblKisiGezinti">
+        <PropertyRef Name="KisiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblKisiGezinti_TblKullanici">
+    <End Role="TblKullanici" Type="Self.TblKullanici" Multiplicity="0..1" />
+    <End Role="TblKisiGezinti" Type="Self.TblKisiGezinti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblKullanici">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="TblKisiGezinti">
+        <PropertyRef Name="KullaniciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblKisiGezinti_TblMovie">
+    <End Role="TblMovie" Type="Self.TblMovie" Multiplicity="0..1" />
+    <End Role="TblKisiGezinti" Type="Self.TblKisiGezinti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMovie">
+        <PropertyRef Name="MovieId" />
+      </Principal>
+      <Dependent Role="TblKisiGezinti">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblKisiGezinti_TblTvSeries">
+    <End Role="TblTvSeries" Type="Self.TblTvSeries" Multiplicity="0..1" />
+    <End Role="TblKisiGezinti" Type="Self.TblKisiGezinti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblTvSeries">
+        <PropertyRef Name="TvSeriesId" />
+      </Principal>
+      <Dependent Role="TblKisiGezinti">
+        <PropertyRef Name="TvSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblKullanici_TblKisi">
+    <End Role="TblKisi" Type="Self.TblKisi" Multiplicity="1" />
+    <End Role="TblKullanici" Type="Self.TblKullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblKisi">
+        <PropertyRef Name="KisiId" />
+      </Principal>
+      <Dependent Role="TblKullanici">
+        <PropertyRef Name="KisiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblMovie_TblCategory">
+    <End Role="TblCategory" Type="Self.TblCategory" Multiplicity="1" />
+    <End Role="TblMovie" Type="Self.TblMovie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblCategory">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="TblMovie">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblMovieComment_TblMovie">
+    <End Role="TblMovie" Type="Self.TblMovie" Multiplicity="1" />
+    <End Role="TblMovieComment" Type="Self.TblMovieComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMovie">
+        <PropertyRef Name="MovieId" />
+      </Principal>
+      <Dependent Role="TblMovieComment">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblMoviePhoto_TblMovie">
+    <End Role="TblMovie" Type="Self.TblMovie" Multiplicity="1" />
+    <End Role="TblMoviePhoto" Type="Self.TblMoviePhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMovie">
+        <PropertyRef Name="MovieId" />
+      </Principal>
+      <Dependent Role="TblMoviePhoto">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblMovieVideo_TblMovie">
+    <End Role="TblMovie" Type="Self.TblMovie" Multiplicity="1" />
+    <End Role="TblMovieVideo" Type="Self.TblMovieVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMovie">
+        <PropertyRef Name="MovieId" />
+      </Principal>
+      <Dependent Role="TblMovieVideo">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblTvSeries_TblCategory">
+    <End Role="TblCategory" Type="Self.TblCategory" Multiplicity="1" />
+    <End Role="TblTvSeries" Type="Self.TblTvSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblCategory">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="TblTvSeries">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblTvSeriesComment_TblTvSeries">
+    <End Role="TblTvSeries" Type="Self.TblTvSeries" Multiplicity="1" />
+    <End Role="TblTvSeriesComment" Type="Self.TblTvSeriesComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblTvSeries">
+        <PropertyRef Name="TvSeriesId" />
+      </Principal>
+      <Dependent Role="TblTvSeriesComment">
+        <PropertyRef Name="TvSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblTvSeriesPhoto_TblTvSeries">
+    <End Role="TblTvSeries" Type="Self.TblTvSeries" Multiplicity="1" />
+    <End Role="TblTvSeriesPhoto" Type="Self.TblTvSeriesPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblTvSeries">
+        <PropertyRef Name="TvSeriesId" />
+      </Principal>
+      <Dependent Role="TblTvSeriesPhoto">
+        <PropertyRef Name="TvSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblTvSeriesVideo_TblTvSeries">
+    <End Role="TblTvSeries" Type="Self.TblTvSeries" Multiplicity="1" />
+    <End Role="TblTvSeriesVideo" Type="Self.TblTvSeriesVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblTvSeries">
+        <PropertyRef Name="TvSeriesId" />
+      </Principal>
+      <Dependent Role="TblTvSeriesVideo">
+        <PropertyRef Name="TvSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbMovieModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblActor" EntityType="Self.TblActor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCategory" EntityType="Self.TblCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblDirector" EntityType="Self.TblDirector" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblKisi" EntityType="Self.TblKisi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblKisiGezinti" EntityType="Self.TblKisiGezinti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblKullanici" EntityType="Self.TblKullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblMovie" EntityType="Self.TblMovie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblMovieComment" EntityType="Self.TblMovieComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblMoviePhoto" EntityType="Self.TblMoviePhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblMovieVideo" EntityType="Self.TblMovieVideo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblTvSeries" EntityType="Self.TblTvSeries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblTvSeriesComment" EntityType="Self.TblTvSeriesComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblTvSeriesPhoto" EntityType="Self.TblTvSeriesPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblTvSeriesVideo" EntityType="Self.TblTvSeriesVideo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TblActor_TblMovie" Association="Self.FK_TblActor_TblMovie">
+      <End Role="TblMovie" EntitySet="TblMovie" />
+      <End Role="TblActor" EntitySet="TblActor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblActor_TblTvSeries" Association="Self.FK_TblActor_TblTvSeries">
+      <End Role="TblTvSeries" EntitySet="TblTvSeries" />
+      <End Role="TblActor" EntitySet="TblActor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblDirector_TblMovie" Association="Self.FK_TblDirector_TblMovie">
+      <End Role="TblMovie" EntitySet="TblMovie" />
+      <End Role="TblDirector" EntitySet="TblDirector" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblDirector_TblTvSeries" Association="Self.FK_TblDirector_TblTvSeries">
+      <End Role="TblTvSeries" EntitySet="TblTvSeries" />
+      <End Role="TblDirector" EntitySet="TblDirector" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblKisiGezinti_TblKisi" Association="Self.FK_TblKisiGezinti_TblKisi">
+      <End Role="TblKisi" EntitySet="TblKisi" />
+      <End Role="TblKisiGezinti" EntitySet="TblKisiGezinti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblKisiGezinti_TblKullanici" Association="Self.FK_TblKisiGezinti_TblKullanici">
+      <End Role="TblKullanici" EntitySet="TblKullanici" />
+      <End Role="TblKisiGezinti" EntitySet="TblKisiGezinti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblKisiGezinti_TblMovie" Association="Self.FK_TblKisiGezinti_TblMovie">
+      <End Role="TblMovie" EntitySet="TblMovie" />
+      <End Role="TblKisiGezinti" EntitySet="TblKisiGezinti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblKisiGezinti_TblTvSeries" Association="Self.FK_TblKisiGezinti_TblTvSeries">
+      <End Role="TblTvSeries" EntitySet="TblTvSeries" />
+      <End Role="TblKisiGezinti" EntitySet="TblKisiGezinti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblKullanici_TblKisi" Association="Self.FK_TblKullanici_TblKisi">
+      <End Role="TblKisi" EntitySet="TblKisi" />
+      <End Role="TblKullanici" EntitySet="TblKullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblMovie_TblCategory" Association="Self.FK_TblMovie_TblCategory">
+      <End Role="TblCategory" EntitySet="TblCategory" />
+      <End Role="TblMovie" EntitySet="TblMovie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblMovieComment_TblMovie" Association="Self.FK_TblMovieComment_TblMovie">
+      <End Role="TblMovie" EntitySet="TblMovie" />
+      <End Role="TblMovieComment" EntitySet="TblMovieComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblMoviePhoto_TblMovie" Association="Self.FK_TblMoviePhoto_TblMovie">
+      <End Role="TblMovie" EntitySet="TblMovie" />
+      <End Role="TblMoviePhoto" EntitySet="TblMoviePhoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblMovieVideo_TblMovie" Association="Self.FK_TblMovieVideo_TblMovie">
+      <End Role="TblMovie" EntitySet="TblMovie" />
+      <End Role="TblMovieVideo" EntitySet="TblMovieVideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblTvSeries_TblCategory" Association="Self.FK_TblTvSeries_TblCategory">
+      <End Role="TblCategory" EntitySet="TblCategory" />
+      <End Role="TblTvSeries" EntitySet="TblTvSeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblTvSeriesComment_TblTvSeries" Association="Self.FK_TblTvSeriesComment_TblTvSeries">
+      <End Role="TblTvSeries" EntitySet="TblTvSeries" />
+      <End Role="TblTvSeriesComment" EntitySet="TblTvSeriesComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblTvSeriesPhoto_TblTvSeries" Association="Self.FK_TblTvSeriesPhoto_TblTvSeries">
+      <End Role="TblTvSeries" EntitySet="TblTvSeries" />
+      <End Role="TblTvSeriesPhoto" EntitySet="TblTvSeriesPhoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblTvSeriesVideo_TblTvSeries" Association="Self.FK_TblTvSeriesVideo_TblTvSeries">
+      <End Role="TblTvSeries" EntitySet="TblTvSeries" />
+      <End Role="TblTvSeriesVideo" EntitySet="TblTvSeriesVideo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

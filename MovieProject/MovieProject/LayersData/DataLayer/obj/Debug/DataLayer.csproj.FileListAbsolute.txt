@@ -1,0 +1,12 @@
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\bin\Debug\DataLayer.dll.config
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\bin\Debug\DataLayer.dll
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\bin\Debug\DataLayer.pdb
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\bin\Debug\EntityFramework.dll
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\bin\Debug\EntityFramework.xml
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\obj\Debug\DataLayer.dll
+D:\WorkSpace\Web\MovieProject\MovieProject\LayersData\DataLayer\obj\Debug\DataLayer.pdb

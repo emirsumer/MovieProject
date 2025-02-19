@@ -1,0 +1,283 @@
+﻿@model Movie.Admin.Models.MovieSeries
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- main content -->
+<main class="main">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- main title -->
+            <div class="col-12">
+                <div class="main__title">
+                    <h2>Dashboard</h2>
+
+                    <a href="~/AddItem/Index" class="main__title-link"><span>add item</span></a>
+                </div>
+            </div>
+            <!-- end main title -->
+        </div>
+
+        <div class="row">
+            <!-- stats -->
+           <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stats">
+                    <span>Total Movies</span>
+                    <p>@ViewBag.MovieCount</p>
+                    <img src="~/img/film.svg" alt="Film Icon">
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stats">
+                    <span>Total Tv Series</span>
+                    <p>@ViewBag.SeriesCount</p>
+                    <img src="~/img/film.svg" alt="Series Icon">
+                </div>
+            </div>
+            <!-- end stats -->
+            <!-- stats -->
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stats">
+                    <span>Total Movie Comments</span>
+                    <p>@ViewBag.MCommentCount</p>
+                    <img src="~/img/comments.svg" alt="">
+                </div>
+            </div>
+            <!-- end stats -->
+            <!-- stats -->
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="stats">
+                    <span>Total Tv Series Comments</span>
+                    <p>@ViewBag.TvCommentCount</p>
+                    <img src="~/img/comments.svg" alt="">
+                </div>
+            </div>
+            <!-- end stats -->
+            <!-- dashbox -->
+            <div class="col-12 col-xl-6">
+                <div class="dashbox">
+                    <div class="dashbox__title">
+                        <h3><img src="~/img/award.svg" alt=""> Top items</h3>
+
+                        <div class="dashbox__wrap">
+                            <a class="dashbox__refresh" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,11a1,1,0,0,0-1,1,8.05,8.05,0,1,1-2.22-5.5h-2.4a1,1,0,0,0,0,2h4.53a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4.77A10,10,0,1,0,22,12,1,1,0,0,0,21,11Z" /></svg></a>
+                            <a class="dashbox__more" href="~/Catalog/Index">View All</a>
+                        </div>
+                    </div>
+
+                    <div class="dashbox__table-wrap dashbox__table-wrap--1">
+                        <table class="dashbox__table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>TITLE</th>
+                                    <th>CATEGORY</th>
+                                    <th>RATING</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @foreach (var item in Model.movies)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="dashbox__table-text">@item.MovieId</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text"><a href="#"></a>@item.MovieName</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text">Movie</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text dashbox__table-text--rate">9.2</div>
+                                        </td>
+
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end dashbox -->
+            <!-- dashbox -->
+            <div class="col-12 col-xl-6">
+                <div class="dashbox">
+                    <div class="dashbox__title">
+                        <h3><img src="~/img/film.svg" alt=""> Latest items</h3>
+
+                        <div class="dashbox__wrap">
+                            <a class="dashbox__refresh" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,11a1,1,0,0,0-1,1,8.05,8.05,0,1,1-2.22-5.5h-2.4a1,1,0,0,0,0,2h4.53a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4.77A10,10,0,1,0,22,12,1,1,0,0,0,21,11Z" /></svg></a>
+                            <a class="dashbox__more" href="~/Reviews/Index">View All</a>
+                        </div>
+                    </div>
+
+                    <div class="dashbox__table-wrap dashbox__table-wrap--2">
+                        <table class="dashbox__table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>ITEM</th>
+                                    <th>CATEGORY</th>
+                                    <th>RATING</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.tvSeries)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            <div class="dashbox__table-text">@item.TvSeriesId</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text"><a href="#">@item.TvSeriesName</a></div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text">TV Series</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text dashbox__table-text--rate">7.7</div>
+                                        </td>
+
+
+                                    </tr>
+                                }
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end dashbox -->
+            <!-- dashbox -->
+            <div class="col-12 col-xl-6">
+                <div class="dashbox">
+                    <div class="dashbox__title">
+                        <h3><img src="~/img/user-circle.svg" alt=""> Latest users</h3>
+
+                        <div class="dashbox__wrap">
+                            <a class="dashbox__refresh" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,11a1,1,0,0,0-1,1,8.05,8.05,0,1,1-2.22-5.5h-2.4a1,1,0,0,0,0,2h4.53a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4.77A10,10,0,1,0,22,12,1,1,0,0,0,21,11Z" /></svg></a>
+                            <a class="dashbox__more" href="~/Reviews/Index">View All</a>
+                        </div>
+                    </div>
+
+                    <div class="dashbox__table-wrap dashbox__table-wrap--3">
+                        <table class="dashbox__table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>FULL NAME</th>
+                                    <th>EMAIL</th>
+                                    <th>USERNAME</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.kullanicilar)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="dashbox__table-text">@item.KullaniciId</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text">@item.TblKisi.Ad @item.TblKisi.Soyad</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text">@item.TblKisi.MailAdresi</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text">@item.KullaniciAdi</div>
+                                        </td>
+
+                                    </tr>
+                                }
+                             
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end dashbox -->
+            <!-- dashbox -->
+            <div class="col-12 col-xl-6">
+                <div class="dashbox">
+                    <div class="dashbox__title">
+                        <h3><img src="~/img/star-half-alt.svg" alt=""> Latest reviews</h3>
+
+                        <div class="dashbox__wrap">
+                            <a class="dashbox__refresh" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,11a1,1,0,0,0-1,1,8.05,8.05,0,1,1-2.22-5.5h-2.4a1,1,0,0,0,0,2h4.53a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4.77A10,10,0,1,0,22,12,1,1,0,0,0,21,11Z" /></svg></a>
+                            <a class="dashbox__more" href="~/Reviews/Index">View All</a>
+                        </div>
+                    </div>
+
+                    <div class="dashbox__table-wrap dashbox__table-wrap--4">
+                        <table class="dashbox__table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>ITEM</th>
+                                    <th>AUTHOR</th>
+                                    <th>RATING</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.moviesComments)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="dashbox__table-text">@item.MovieId</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text"><a href="#"> @item.TblMovie.MovieName</a></div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text">@item.KullaniciId</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text dashbox__table-text--rate">7.2</div>
+                                        </td>
+                                    </tr>
+                                }
+
+                                @foreach (var comment in Model.seriesComment)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="dashbox__table-text">@comment.TvSeriesId</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text"><a href="#"> @comment.TblTvSeries.TvSeriesName</a></div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text">@comment.KullaniciId</div>
+                                        </td>
+                                        <td>
+                                            <div class="dashbox__table-text dashbox__table-text--rate">7.2</div>
+                                        </td>
+                                    </tr>
+                                }
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end dashbox -->
+        </div>
+    </div>
+</main>
+<!-- end main content -->
+<!-- JS -->
+<script src="~/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/smooth-scrollbar.js"></script>
+<script src="~/js/slimselect.min.js"></script>
+<script src="~/js/admin.js"></script>
+
+</html>
